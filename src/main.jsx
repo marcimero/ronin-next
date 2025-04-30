@@ -95,7 +95,7 @@ function App() {
                                 {filteredCards.map((card) => (
                                     <li
                                         key={card.id}
-                                        className={`cursor-pointer px-3 py-3 mx-2 rounded-xl mb-1 text-sm font-medium  
+                                        className={`cursor-pointer px-3 py-3 mx-2 rounded-xl mb-1 text-sm  
                                             ${selectedCard?.id === card.id
                                                 ? "bg-stone-100"
                                                 : "hover:bg-stone-100"} 
