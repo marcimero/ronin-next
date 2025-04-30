@@ -65,7 +65,7 @@ function App() {
     });
 
     return (
-        <div className="flex flex-col h-screen font-sans">
+        <div className="flex flex-col h-screen font-sans border-t border-gray-300">
             <div className="flex flex-1 overflow-hidden">
                 {/* Linke Spalte */}
                 <div className="w-1/4 border-r border-gray-300 overflow-hidden flex flex-col">
@@ -76,7 +76,7 @@ function App() {
                             placeholder="Search card..."
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
-                            className="w-full px-4 py-4 border-b pr-10 outline-none"
+                            className="w-full px-4 py-4 border-b border-gray-300 pr-10 outline-none"
                         />
                         {query && (
                             <button
@@ -95,10 +95,10 @@ function App() {
                                 {filteredCards.map((card) => (
                                     <li
                                         key={card.id}
-                                        className={`cursor-pointer px-3 py-3 mx-2 rounded-xl mb-1 text-sm  
+                                        className={`cursor-pointer px-4 py-3 mb-1 text-sm  
                                             ${selectedCard?.id === card.id
-                                                ? "bg-stone-100"
-                                                : "hover:bg-stone-100"} 
+                                                ? "bg-zinc-100 font-semibold"
+                                                : "hover:bg-zinc-200"} 
                                             focus:outline-none`}
                                         onClick={() => setSelectedCard(card)}
                                     >
@@ -154,7 +154,7 @@ function App() {
 
             {/* Footer */}
             <footer className="text-center text-xs text-gray-500 py-2 border-t border-gray-300">
-                Karteninformationen von <a href="https://db.ygoprodeck.com/api-guide/" className="underline" target="_blank" rel="noopener noreferrer">YGOProDeck API</a>, Rulings basieren auf historischen Quellen wie Netrep und Judge-FAQs (2005).
+                Card information from <a href="https://db.ygoprodeck.com/api-guide/" className="underline hover:no-underline" target="_blank" rel="noopener noreferrer">YGOProDeck API</a>, rulings are based on historical sources such as Netrep and Judge FAQs (2005) (2005).
             </footer>
         </div>
     );
