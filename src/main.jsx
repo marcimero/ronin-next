@@ -97,8 +97,8 @@ function App() {
                                         key={card.id}
                                         className={`cursor-pointer px-4 py-3 mb-1 text-sm  
                                             ${selectedCard?.id === card.id
-                                                ? "bg-zinc-100 font-semibold"
-                                                : "hover:bg-zinc-200"} 
+                                                ? "bg-zinc-200"
+                                                : "hover:bg-zinc-300"} 
                                             focus:outline-none`}
                                         onClick={() => setSelectedCard(card)}
                                     >
