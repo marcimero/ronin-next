@@ -84,7 +84,7 @@ function App() {
     });
 
     return (
-        <div className="flex flex-col h-screen font-sans border-t border-gray-300">
+        <div className="flex flex-col h-screen font-sans border-gray-300">
             <div className="flex flex-1 overflow-hidden">
                 {/* Linke Spalte */}
                 <div className="w-1/4 border-r border-gray-300 overflow-hidden flex flex-col">
@@ -116,8 +116,8 @@ function App() {
                                     key={card.id}
                                     className={`cursor-pointer px-4 py-3 mb-1 text-sm  
                                         ${selectedCard?.id === card.id
-                                            ? "bg-zinc-200"
-                                            : "hover:bg-zinc-300"} 
+                                            ? "bg-zinc-300"
+                                            : "hover:bg-zinc-200"} 
                                         focus:outline-none flex items-center`}
                                     onClick={() => setSelectedCard(card)}
                                 >
@@ -176,7 +176,7 @@ function App() {
 
             {/* Footer */}
             <footer className="text-center text-xs text-gray-500 py-2 border-t border-gray-300">
-                Card information from <a href="https://db.ygoprodeck.com/api-guide/" className="underline hover:no-underline" target="_blank" rel="noopener noreferrer">YGOProDeck API</a>, rulings are based on historical sources such as Netrep and Judge FAQs (2005) (2005).
+                Card information from <a href="https://db.ygoprodeck.com/api-guide/" className="underline hover:no-underline" target="_blank" rel="noopener noreferrer">YGOProDeck API</a>, rulings are based on historical sources such as Netrep and Judge FAQs (2005).
             </footer>
         </div>
     );
