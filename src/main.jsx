@@ -3,6 +3,25 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import CardRulings from "./components/CardRulings";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import normalMonsterIcon from "./assets/icons/normal-monster.svg";
+import effectMonsterIcon from "./assets/icons/effect-monster.svg";
+import spellCardIcon from "./assets/icons/spell-card.svg";
+import trapCardIcon from "./assets/icons/trap-card.svg";
+import fusionMonsterIcon from "./assets/icons/fusion-monster.svg";
+import ritualMonsterIcon from "./assets/icons/ritual-monster.svg";
+
+function getTypeIcon(card) {
+    const type = card.type.toLowerCase();
+
+    if (type.includes("normal monster")) return normalMonsterIcon;
+    if (type.includes("effect monster")) return effectMonsterIcon;
+    if (type.includes("fusion monster")) return fusionMonsterIcon;
+    if (type.includes("ritual monster")) return ritualMonsterIcon;
+    if (type.includes("spell")) return spellCardIcon;
+    if (type.includes("trap")) return trapCardIcon;
+
+    return null;
+}
 
 function App() {
     const [cards, setCards] = useState([]);
@@ -94,16 +113,19 @@ function App() {
                             <ul ref={listRef}>
                                 {filteredCards.map((card) => (
                                     <li
-                                        key={card.id}
-                                        className={`cursor-pointer px-4 py-3 mb-1 text-sm  
-                                            ${selectedCard?.id === card.id
-                                                ? "bg-zinc-200"
-                                                : "hover:bg-zinc-300"} 
-                                            focus:outline-none`}
-                                        onClick={() => setSelectedCard(card)}
-                                    >
-                                        {card.name}
-                                    </li>
+                                    key={card.id}
+                                    className={`cursor-pointer px-4 py-3 mb-1 text-sm  
+                                        ${selectedCard?.id === card.id
+                                            ? "bg-zinc-200"
+                                            : "hover:bg-zinc-300"} 
+                                        focus:outline-none flex items-center`}
+                                    onClick={() => setSelectedCard(card)}
+                                >
+                                    {getTypeIcon(card) && (
+                                        <img src={getTypeIcon(card)} alt="" className="w-4 h-4 mr-2" />
+                                    )}
+                                    <span>{card.name}</span>
+                                </li>
                                 ))}
                             </ul>
                         )}
@@ -160,9 +182,5 @@ function App() {
     );
 }
 
-// Sicherstellen, dass createRoot nicht doppelt aufgerufen wird
-const container = document.getElementById("root");
-if (!container._reactRootContainer) {
-    const root = ReactDOM.createRoot(container);
-    root.render(<App />);
-}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<React.StrictMode><App /></React.StrictMode>);
