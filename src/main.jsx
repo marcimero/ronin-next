@@ -59,29 +59,29 @@ function App() {
     }
   }, [query]);
 
-  const handleKeyDown = (e) => {
-    if (e.key === "f" && document.activeElement !== inputRef.current) {
-      e.preventDefault();
-      inputRef.current?.focus();
-    } else if (e.key === "ArrowDown") {
-      e.preventDefault();
-      const index = filteredCards.findIndex((c) => c.id === selectedCard?.id);
-      if (index < filteredCards.length - 1) {
-        setSelectedCard(filteredCards[index + 1]);
-      }
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      const index = filteredCards.findIndex((c) => c.id === selectedCard?.id);
-      if (index > 0) {
-        setSelectedCard(filteredCards[index - 1]);
-      }
-    }
-  };
+  // const handleKeyDown = (e) => {
+  //   if (e.key === "f" && document.activeElement !== inputRef.current) {
+  //     e.preventDefault();
+  //     inputRef.current?.focus();
+  //   } else if (e.key === "ArrowDown") {
+  //     e.preventDefault();
+  //     const index = filteredCards.findIndex((c) => c.id === selectedCard?.id);
+  //     if (index < filteredCards.length - 1) {
+  //       setSelectedCard(filteredCards[index + 1]);
+  //     }
+  //   } else if (e.key === "ArrowUp") {
+  //     e.preventDefault();
+  //     const index = filteredCards.findIndex((c) => c.id === selectedCard?.id);
+  //     if (index > 0) {
+  //       setSelectedCard(filteredCards[index - 1]);
+  //     }
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  });
+  // useEffect(() => {
+  //   window.addEventListener("keydown", handleKeyDown);
+  //   return () => window.removeEventListener("keydown", handleKeyDown);
+  // });
 
   return (
     <div className="flex flex-col h-screen font-sans border-gray-300">
