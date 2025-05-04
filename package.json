@@ -1,6 +1,6 @@
 {
   "name": "goat-rulings-app",
-  "homepage": "https://marcimero.github.io/ronin-next",
+  "homepage": "https://marcimero.github.io/ronin-next/",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
