@@ -108,7 +108,7 @@ function App() {
           </div>
           <div className="overflow-y-auto flex-1 py-2">
             {loading ? (
-              <p className="px-4">Loading cards...</p>
+              <p className="px-4 py-3">Loading cards...</p>
             ) : (
               <ul ref={listRef}>
                 {filteredCards.map((card) => (
