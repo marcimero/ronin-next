@@ -15,6 +15,7 @@ function getTypeIcon(card) {
 
   if (type.includes("normal monster")) return normalMonsterIcon;
   if (type.includes("effect monster")) return effectMonsterIcon;
+  if (type.includes("spirit monster")) return effectMonsterIcon;
   if (type.includes("fusion monster")) return fusionMonsterIcon;
   if (type.includes("ritual monster")) return ritualMonsterIcon;
   if (type.includes("spell")) return spellCardIcon;
